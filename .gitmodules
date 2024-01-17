@@ -1,0 +1,6 @@
+[submodule "olive.c"]
+	path = olive.c
+	url = https://github.com/tsoding/olive.c.git
+[submodule "porth"]
+	path = porth
+	url = https://gitlab.com/tsoding/porth.git
