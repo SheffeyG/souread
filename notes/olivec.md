@@ -22,9 +22,9 @@ defer:
     return result;
 }
 ```
-- do { ... } while (0) 是一个do-while循环，用于创建一个代码块。这种写法的目的是确保宏在使用时像一个语句，而不是表达式。
-- result = (value); 是将传入的参数 value 赋值给一个名为 result 的变量。这个变量可能是在宏定义之前声明的。
-- goto defer; 是一个无条件跳转语句，将程序的执行流程转到标签 defer 所在的位置。
+do { ... } while (0) 是一个do-while循环，用于创建一个代码块。这种写法的目的是确保宏在使用时像一个语句，而不是表达式。
+result = (value); 是将传入的参数 value 赋值给一个名为 result 的变量。这个变量可能是在宏定义之前声明的。
+goto defer; 是一个无条件跳转语句，将程序的执行流程转到标签 defer 所在的位置。
 
 这个宏定义的目的是在函数中实现资源释放的延迟操作。通常，在函数的执行过程中，可能会分配一些资源（如内存、文件句柄等），需要在函数结束时进行释放。使用这个宏定义可以将资源的释放操作延迟到函数的最后，以保证在任何情况下都能正确释放资源。
 > 这样做的很大一部分原因是原始c语言不支持gc和错误码。
@@ -36,9 +36,9 @@ stbi_write_png(file_path, WIDTH, HEIGHT, 4, pixels, WIDTH*sizeof(uint32_t))
 ```
 
 ## a26b886 Implement automatic testing
-- argc 是一个整数，表示命令行参数的数量（argument count）。它指示了在运行程序时传递给它的命令行参数的个数，包括程序本身的名称。至少会有一个参数，即程序的名称。
+argc 是一个整数，表示命令行参数的数量（argument count）。它指示了在运行程序时传递给它的命令行参数的个数，包括程序本身的名称。至少会有一个参数，即程序的名称。
 
-- argv 是一个字符指针数组（argument vector），它存储了命令行参数的字符串。每个元素都是一个指向以 null 结尾的 C 字符串的指针。argv[0] 存储的是程序的名称，argv[1] 存储的是第一个命令行参数，依此类推。
+argv 是一个字符指针数组（argument vector），它存储了命令行参数的字符串。每个元素都是一个指向以 null 结尾的 C 字符串的指针。argv[0] 存储的是程序的名称，argv[1] 存储的是第一个命令行参数，依此类推。
 
 ## 0d83698 Add WebAssemply example
 ## 2472dd3 Inline olivec_sort_triangle_points_by_y
